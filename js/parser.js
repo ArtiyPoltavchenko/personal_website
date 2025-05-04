@@ -8,12 +8,14 @@ function applyOddEvenClass(element, index) {
 /**
  * Utility: create section with title and container
  */
-function createSectionContainer(titleText) {
+function createSectionContainer(titleText, sectionClass) {
   const section = document.createElement('section');
+  section.classList.add(sectionClass);
+
   const h2 = document.createElement('h2');
   const container = document.createElement('div');
 
-  h2.textContent = titleText;
+  h2.innerText = titleText;
   section.append(h2, container);
 
   return { section, container };
@@ -24,12 +26,13 @@ function createSectionContainer(titleText) {
  */
 function renderIntro(data) {
   const section = document.createElement('section');
+  section.classList.add('introduction');
 
   const h2 = document.createElement('h2');
   const p = document.createElement('p');
 
-  h2.textContent = data.title;
-  p.textContent = data.text;
+  h2.innerText = data.title;
+  p.innerText = data.text;
 
   section.append(h2, p);
   return section;
@@ -39,18 +42,19 @@ function renderIntro(data) {
  * Render skills block
  */
 function renderSkills(skills) {
-  const { section, container } = createSectionContainer("My Skills");
+  const { section, container } = createSectionContainer("My Skills", "skills");
 
   skills.forEach((skill, index) => {
     const block = document.createElement('div');
     applyOddEvenClass(block, index);
-
+    block.classList.add('card');
+    
     const img = document.createElement('img');
     const p = document.createElement('p');
 
     img.src = skill.icon;
     img.alt = skill.name;
-    p.textContent = skill.name;
+    p.innerText = skill.name;
 
     block.append(img, p);
     container.appendChild(block);
@@ -63,20 +67,22 @@ function renderSkills(skills) {
  * Render experience block
  */
 function renderExperience(experiences) {
-  const { section, container } = createSectionContainer("My Experience");
+  const { section, container } = createSectionContainer("My Experience", "experience");
 
   experiences.forEach((exp, index) => {
     const block = document.createElement('div');
     applyOddEvenClass(block, index);
+    block.classList.add('card');
+
 
     const top = document.createElement('div');
     const title = document.createElement('h3');
     const date = document.createElement('span');
     const desc = document.createElement('p');
 
-    title.textContent = exp.title;
-    date.textContent = exp.date;
-    desc.textContent = exp.description;
+    title.innerText = exp.title;
+    date.innerText = exp.date;
+    desc.innerText = exp.description;
 
     top.append(title, date);
     block.append(top, desc);
@@ -88,23 +94,23 @@ function renderExperience(experiences) {
 
 /**
  * Render portfolio block
- * (future usage, prepared in advance)
  */
 function renderPortfolio(projects) {
-  const { section, container } = createSectionContainer("My Portfolio");
+  const { section, container } = createSectionContainer("My Portfolio", "portfolio");
 
   projects.forEach((proj, index) => {
     const block = document.createElement('div');
     applyOddEvenClass(block, index);
+    block.classList.add('card');
 
     const title = document.createElement('h3');
     const desc = document.createElement('p');
     const link = document.createElement('a');
 
-    title.textContent = proj.title;
-    desc.textContent = proj.description;
+    title.innerText = proj.title;
+    desc.innerText = proj.description;
     link.href = proj.url;
-    link.textContent = "View Project";
+    link.innerText = "View Project";
 
     block.append(title, desc, link);
     container.appendChild(block);
