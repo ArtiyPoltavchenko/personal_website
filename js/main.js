@@ -1,6 +1,6 @@
 import { parseSection } from './parser.js';
 
-const content = document.querySelector('#dynamic-content');
+const content = document.querySelector('.main-grid');
 
 (async () => {
   const pageData = await fetch('../data/home.json').then(r => r.json());
@@ -12,7 +12,6 @@ const content = document.querySelector('#dynamic-content');
       if (sectionElement) content.appendChild(sectionElement);
     }
   });
-  
 
   observeSections();
 })();
@@ -22,12 +21,25 @@ function observeSections() {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add('in-view');
+
+        // Add latency before cards will appear
+        const cards = entry.target.querySelectorAll('.card');
+        cards.forEach((card, index) => {
+          setTimeout(() => {
+            card.classList.add('visible');
+          }, index * 500);
+        });
+
         obs.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.2 });
+  }, {
+    threshold: 0.1,
+    rootMargin: '0px 0px -30% 0px' 
+  });
 
-  document.querySelectorAll('main > section').forEach(section => {
+  document.querySelectorAll('.main-grid > section').forEach(section => {
     observer.observe(section);
   });
 }
+

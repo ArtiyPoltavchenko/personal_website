@@ -1,10 +1,10 @@
 {
-    "render_order": ["introduction", "skills", "experience"],
+    "render_order": ["introduction", "skills", "experiences"],
   
     "sections": [
       {
         "introduction": {
-          "title": "About Me",
+          "title": "About me",
           "text": "I am a backend developer passionate about clean code, learning new technologies and creating awesome things."
         }
       },
