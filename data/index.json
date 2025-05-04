@@ -1,5 +1,9 @@
 {
-    "render_order": ["introduction", "skills", "experiences"],
+    "render_order": [
+    "introduction",
+    "experiences",
+    "skills"
+       ],
   
     "sections": [
       {
