@@ -1,0 +1,19 @@
+/* ------------------------------------------------------------------------
+   CSS Variables
+   ------------------------------------------------------------------------ */
+   :root {
+    --container-width: 1350px;
+    --gap: 2rem;
+    --color-gray-dark: #191919;
+    --color-gray-darker: #222222;
+    --color-gray: #2F3132;
+    --color-gray-light: #CDCDCD;
+    --color-purple: #9747FF;
+    --color-white: #FFFFFF;
+    --color-red: #EB143B;
+    --color-green: #02C076;
+  
+    --font-primary: Helvetica, Arial, sans-serif;
+  }
+  
+  
