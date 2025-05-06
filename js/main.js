@@ -45,3 +45,37 @@ function observeSections() {
     observer.observe(section);
   });
 }
+
+
+
+// Background-icons moove
+const icons = document.querySelectorAll('.background-icons .bg-icon');
+
+// Change positions amount when changing amount of icons
+const positions = [
+  { x: '8%', y: '15%' },
+  { x: '5%', y: '50%' },
+  { x: '85%', y: '20%' },
+  { x: '90%', y: '75%' }
+];
+
+// Applying positions
+icons.forEach((icon, index) => {
+  icon.style.left = positions[index].x;
+  icon.style.top = positions[index].y;
+});
+
+// Move icons a bit with mouse
+document.addEventListener('mousemove', (e) => {
+  const { clientX, clientY } = e;
+  const centerX = window.innerWidth / 2;
+  const centerY = window.innerHeight / 2;
+
+  const moveX = (clientX - centerX) / centerX;
+  const moveY = (clientY - centerY) / centerY;
+
+  icons.forEach((icon, index) => {
+    const offset = 10 + index * 5;
+    icon.style.transform = `translate(${moveX * offset}px, ${moveY * offset}px)`;
+  });
+});
