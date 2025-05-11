@@ -83,6 +83,7 @@ document.addEventListener('mousemove', (e) => {
   });
 });
 
+// open modal window
 content.addEventListener('click', e => {
   const card = e.target.closest('.card[data-slug]');
   if (!card) return;
@@ -94,3 +95,24 @@ content.addEventListener('click', e => {
     openProject(slug, path);
   }
 });
+
+// copy mail to clipboard
+document.addEventListener('click', (e) => {
+  const item = e.target.closest('.copy-email');
+  if (!item) return;
+
+  const emailSpan = item.querySelector('#email-to-copy');
+  const tooltip = item.querySelector('.tooltip-msg');
+  const email = emailSpan.textContent;
+
+  navigator.clipboard.writeText(email).then(() => {
+    tooltip.classList.add('show');
+    tooltip.hidden = false;
+
+    setTimeout(() => {
+      tooltip.classList.remove('show');
+      tooltip.hidden = true;
+    }, 2000);
+  });
+});
+

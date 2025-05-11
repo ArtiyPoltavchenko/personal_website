@@ -41,6 +41,46 @@
   color: var(--color-purple);
 }
 
+#email-to-copy:hover{
+    color: var(--color-purple);
+    cursor: pointer;
+}
+
+.copy-email {
+  position: relative;
+}
+
+.tooltip-target {
+  cursor: pointer;
+}
+
+.tooltip-msg {
+  position: absolute;
+  background-color: var(--color-gray-darker);
+  color: var(--color-white);
+  border: 1px solid var(--color-purple);
+  padding: 0.4rem 0.75rem;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  top: -2.2rem;
+  left: 0;
+  opacity: 0;
+  transform: translateY(10px);
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease,
+    border 0.3s ease,
+    background-color 0.3s ease;
+  pointer-events: none;
+  z-index: 999;
+}
+
+.tooltip-msg.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 @media (min-width: 900px) {
   .footer-container {
     flex-direction: row;

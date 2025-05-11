@@ -96,6 +96,8 @@ p br {
      Footer
      ------------------------------------------------------------------------ */
 
+
+     
   footer {
     background-color: var(--color-gray-darker);
     color: var(--color-gray-light);
@@ -110,6 +112,7 @@ p br {
     opacity: 0.7;
     letter-spacing: 0.5px;
   }
+
 
 
   /* ------------------------------------------------------------------------
