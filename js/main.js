@@ -4,9 +4,8 @@ import { openProject } from './modal.js';
 const content = document.querySelector('.main-grid');
 
 (async () => {
-  const path = window.location.pathname;
-  const page = path.split("/").pop().replace('.html', '') || 'home';
-  const jsonPath = `../data/${page}.json`;
+
+  const jsonPath = "/data/index.json";
 
   const pageData = await fetch(jsonPath).then(r => r.json());
 
