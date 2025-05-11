@@ -94,7 +94,7 @@
   margin-bottom: 1rem;
   color: var(--color-gray-light);
   line-height: 1.5;
-  max-height: 250px;
+  max-height: none;
 }
 
 .modal__images {
@@ -129,8 +129,10 @@
     border-radius: 8px;
   }
   .modal__images{
-    min-height: 50vw;  
-    max-height: 60vw; 
+    min-height: 80vw;  
+    max-height: 90vw; 
   }
-  
+  .modal__desc{
+    max-height: none;
+  }
 }

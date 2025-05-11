@@ -1,0 +1,12 @@
+{
+  "title": "[ORCHE]STRA",
+  "tags": ["Go", "React", "Docker", "Kubernetes", "Kafka", "PostgreSQL", "GitLab", "YouTrack"],
+  "description": "**[ORCHE]STRA** is a startup-level web application for building, deploying, and monitoring **custom crypto trading strategies**.\\n\\nThe platform allows users to visually assemble strategies using a **node-based editor**, configure inputs, and connect to live market data in real time. A **dashboard** provides insight into running strategies, logs, and outcomes.\\n\\nPlanned features included a **community-driven marketplace** for trading strategies, and a **subscription-based** access model.\\n\\nFrom a technical side, the app monitored exchange APIs, ran live automations, and handled complex data flows via **Kafka** and **Go microservices**, orchestrated with **Kubernetes**.\\n\\nI was responsible for process orchestration, **task management**, team support, **UX feedback**, QA, and conducting market research. Also helped bridge design-to-dev gaps and organized communication between backend/UX teams.\\n\\nThe product combined real-world complexity with modular design, aimed at making algo trading accessible to non-technical users."
+,
+  "images": [
+    "./assets/img/projects_imgs/orchestra-img1.png",
+    "./assets/img/projects_imgs/orchestra-img2.png",
+    "./assets/img/projects_imgs/orchestra-img3.png",
+    "./assets/img/projects_imgs/orchestra-img4.png"
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "title": "Personal Website",
+  "tags": ["HTML", "CSS", "JavaScript", "JSON", "Frontend Architecture", "Design System"],
+  "description": "**Personal Website** is a modular, responsive single-page portfolio built without frameworks — just **vanilla HTML, CSS, and JS**, dynamically populated via structured **JSON files**.\\n\\nThe site features a clean architecture:\\n\\n- **Parser-based rendering** of sections like intro, skills, projects, and experience\\n- Fully dynamic content via JSON (supports markdown syntax and custom span classes)\\n- **Responsive layout** using mobile-first grid and flexbox\\n- Scroll-triggered animations, hover states, modal overlays, and section-level logic\\n- Visual themes and reusable CSS classes (e.g. `.text-outline`, `.card`, `.projects__grid`)\\n\\nA background parallax icon system reacts to cursor movement, giving the site subtle motion.\\n\\nBuilt iteratively with a focus on clarity, readability, and maintainability — and without relying on libraries or heavy tooling.",
+  "images": [
+    "./assets/img/projects_imgs/site-img1.png",
+    "./assets/img/projects_imgs/site-img2.png"
+  ]
+}
