@@ -1,0 +1,177 @@
+@import url('./modal.css');
+@import url('./header.css');
+@import url('./main_grid.css');
+@import url('./footer.css');
+
+/* ------------------------------------------------------------------------
+   CSS Variables
+   ------------------------------------------------------------------------ */
+   :root {
+    --container-width: 1050px;
+    --gap: 2rem;
+    --color-gray-dark: #191919;
+    --color-gray-darker: #222222;
+    --color-gray: #2F3132;
+    --color-gray-light: #CDCDCD;
+    --color-purple: #9747FF;
+    --color-white: #FFFFFF;
+    --color-red: #EB143B;
+    --color-green: #02C076;
+    --color-purple-light: #B47EFF;
+
+    --min-width-mobile: 900px;
+  
+    --font-primary: Helvetica, Arial, sans-serif;
+  }
+  
+  /* ------------------------------------------------------------------------
+     Global Styles
+     ------------------------------------------------------------------------ */
+  *{
+      box-sizing: border-box;
+      
+  }
+
+  html{
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    background-color: var(--color-gray-dark);
+    color: var(--color-white);
+    font-family: var(--font-primary);
+    margin: 0 auto;
+  }
+  
+  a {
+    color: var(--color-purple);
+    text-decoration: none;
+  }
+
+  p{
+    font-size: large;
+  }
+  
+  header {
+    background-color: var(--color-gray-darker);
+    width: 100%;
+  }
+
+  /* ------------------------------------------------------------------------
+     TEXT Decoration
+     ------------------------------------------------------------------------ */
+
+
+  strong {
+  font-weight: 700;
+  color: var(--color-white);
+}
+
+em {
+  font-style: italic;
+  color: var(--color-gray-light);
+}
+
+u {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  color: var(--color-white);
+}
+
+.text-outline, u {
+  color: transparent;
+  -webkit-text-stroke: 1px var(--color-white);
+  text-stroke: 1px var(--color-white);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+p br {
+  content: '';
+  display: block;
+  margin-bottom: 0.75rem;
+}
+ 
+   /* ------------------------------------------------------------------------
+     Footer
+     ------------------------------------------------------------------------ */
+
+  footer {
+    background-color: var(--color-gray-darker);
+    color: var(--color-gray-light);
+    text-align: center;
+    padding: 2rem 1rem;
+    border-top: 1px solid var(--color-gray);
+    font-size: 0.9rem;
+  }
+  
+  footer p {
+    color: var(--color-gray-light);
+    opacity: 0.7;
+    letter-spacing: 0.5px;
+  }
+
+
+  /* ------------------------------------------------------------------------
+     Parallax/Z-index
+     ------------------------------------------------------------------------ */
+
+
+     .background-icons {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 0;
+    }
+    
+    .background-icons .bg-icon {
+      position: absolute;
+      width: 80px;
+      opacity: 0.5;
+      filter: blur(1px);
+      transition: transform 0.1s ease-out;
+    }
+  
+  
+  /* Desktop layout */
+  @media (min-width: 900px) {
+    .main-grid {
+      grid-template-columns: repeat(2fr, 1fr);
+      grid-template-areas:
+        "introduction portrait"
+        "projects projects"
+        "skills skills"
+        "experience experience";
+    }
+    header .header{
+      justify-content: space-between;
+      flex-direction: row;
+    }
+      .projects__grid {
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
+    .projects__grid .card {
+      width: calc(50% - var(--gap) / 2);
+    }
+}
+
+ 
+
+  
+
+  @keyframes borderGlow {
+    0%, 100% {
+      border-color: var(--color-purple);
+    }
+    50% {
+      border-color: var(--color-purple-light);
+      
+    }
+  }
+  

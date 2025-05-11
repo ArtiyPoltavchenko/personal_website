@@ -1,0 +1,10 @@
+{
+  "title": "ForgeMaster",
+  "tags": ["C#", "Go", "JSON", "Markdown"],
+  "description": "### Features\\n- Modular\\n- Fast\\n- Fun \\n Lorem\\nIpsum\\nSome\\nMore\\nText",
+  "images": [
+    "./assets/img/projects_imgs/forge1.png",
+    "./assets/img/projects_imgs/forge2.png",
+    "./assets/img/projects_imgs/forge3.png"
+  ]
+}

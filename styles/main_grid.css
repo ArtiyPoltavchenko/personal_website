@@ -1,0 +1,266 @@
+ /* ------------------------------------------------------------------------
+     Main Grid Layout (Mobile First)
+     ------------------------------------------------------------------------ */
+  .main-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "portrait"
+      "introduction"
+      "projects"
+      "skills"
+      "experience";
+    gap: var(--gap);
+    max-width: var(--container-width);
+    margin: var(--gap) auto;
+    padding: 0 var(--gap);
+  }
+  
+  .main-grid .introduction {
+    grid-area: introduction;
+  }
+  
+  .main-grid .projects {
+    grid-area: projects;
+  }
+
+  .main-grid .portrait {
+    grid-area: portrait;
+    padding: 0;
+  }
+  
+  .main-grid .skills {
+    grid-area: skills;
+  }
+  
+  .main-grid .experience {
+    grid-area: experience;
+  }
+  
+.main-grid section {
+  opacity: 0;
+  transform: translateY(50px);
+  transition:
+    opacity 0.6s ease,
+    transform 0.6s ease,
+    box-shadow 0.4s ease,
+    border-radius 0.4s ease;
+
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-gray-darker);
+  padding: var(--gap);
+  border-radius: 10px;
+  width: 100%;
+  align-items: center;
+
+  box-shadow: 3px 3px 0 0 var(--color-purple);
+}
+
+  .main-grid section.in-view {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+.main-grid section:hover {
+  box-shadow: 8px 8px 0 0 var(--color-purple-light);
+  border-radius: 20px;
+  transform: scale(1.02);
+}
+  .main-grid section.introduction:hover{
+    transform: scale(1.02);
+  }
+  .main-grid section.portrait:hover{
+    transform: scale(1.02);
+  }
+  
+  .main-grid section h2 {
+    color: var(--color-purple);
+    margin-bottom: 2rem;
+    
+  }
+  
+  .main-grid section p {
+    color: var(--color-gray-light);
+    line-height: 1.6;
+  }
+
+  .main-grid section.introduction{
+    justify-content: space-between;
+  }
+    .about__cv-button {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  margin-top: var(--gap);
+}
+
+.about__cv-button a {
+  font-weight: bold;
+  color: var(--color-white);
+  padding: 0.6rem 1.5rem;
+  border-radius: 100px;
+  box-shadow: inset 0 0 0 100px var(--color-purple);
+  transition: box-shadow 0.3s ease, transform 0.2s ease;
+  text-decoration: none;
+}
+
+.about__cv-button a:hover {
+  box-shadow: inset 0 0 0 5px var(--color-purple);
+  transform: scale(1.03);
+}
+
+.about__cv-button a:active {
+  box-shadow: inset 0 0 0 100px var(--color-purple-light);
+  transition: none;
+}
+  
+  /* Portrait adjustments */
+  .portrait img {
+    overflow-x: auto;
+    width: 100%;
+    max-width: 350px;
+    border-radius: 5px;
+  }
+
+  /* ------------ Skills section ------------ */
+  .skills div {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--gap);
+  }
+  
+  .skills div > div {
+    background-color: var(--color-gray);
+    padding: 1rem;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  
+    flex: 1 1 calc(33% - var(--gap));
+    min-width: 150px;
+  }
+  
+  .skills div > div img {
+    max-width: 80px;
+    margin-bottom: 0.5rem;
+  }
+  
+  .skills div > div p {
+    color: var(--color-gray-light);
+
+    text-align: center;
+  }
+  
+  /* ------------ Experience section ------------ */
+  .experience div {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap);
+    width: 100%;
+  }
+  
+  .experience div > div {
+    background-color: var(--color-gray);
+    padding: 1rem;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    
+  }
+  
+  .experience div > div > div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .experience div > div h3 {
+    color: var(--color-white);
+    margin: 0;
+  }
+  
+  .experience div > div span {
+    color: var(--color-purple);
+  }
+  
+  .experience div > div p {
+    color: var(--color-gray-light);
+    line-height: 1.5;
+  }
+
+  /* Cards styling */
+  .card {
+    opacity: 0;
+    transform: translateX(50px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  
+  .card.even {
+    transform: translateX(-50px);
+  }
+  
+  .card.visible {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  
+  .card:hover {
+    transform: scale(1.05);
+    border: 1px solid var(--color-purple);
+    transition: transform 0.3s ease-in-out;
+  }
+
+  /* ------------ Projects section ------------ */
+.projects__grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--gap);
+  width: 100%;
+}
+
+/* Project preview cards */
+.projects__grid .card {
+  background-size: cover;
+  background-position: center;
+  border-radius: 8px;
+  position: relative;
+  overflow: hidden;
+  height: 200px;
+
+  flex: 1 1 calc(33.333% - var(--gap));
+  min-width: 200px;
+
+  filter: grayscale(100%) brightness(0.8);
+  transition: filter 0.4s ease, transform 0.3s ease-in-out;
+}
+
+.projects__grid .card:hover {
+  filter: grayscale(0%) brightness(1);
+  transform: scale(1.03);
+}
+
+/* Overlay: title + description */
+.projects__grid .card__overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(2px);
+  color: var(--color-white);
+}
+
+.projects__grid .card__overlay h3 {
+  margin: 0;
+}
+
+.projects__grid .card__overlay p {
+  margin: 0.5rem 0 0;
+  color: var(--color-gray-light);
+}

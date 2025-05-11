@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Arsentii Potlavchenko</title>
-  <link rel="stylesheet" href="./styles.css">
+  <link rel="stylesheet" href="./styles/main.css">
   <script type="module" src="./js/main.js" defer></script>
 </head>
 <body>
@@ -19,9 +19,7 @@
   <div class="header">
     <div class="logo"><a href="index.html"><b>Arsentii Poltavchenko</b></a></div>
     <nav>
-      <a href="./pages/portfolio.html">Portfolio</a>
-      <a href="./pages/cv.html">CV</a>
-      <a href="./pages/contact.html">Contact</a>
+      <a href="#contacts">Contact</a>
     </nav>
     <button aria-label="Menu" hidden>☰</button>
   </div>
@@ -45,8 +43,34 @@
 </main>
 
 <footer>
-  <p>&copy; 2025 Arsentii Poltavchenko</p>
-</footer>
+  <div class="footer-container">
 
+    <p class="copyright">&copy; 2025 Arsentii Poltavchenko</p>
+    
+    <div class="footer-contacts" id="contacts">
+      <div class="contact-item">
+        <img src="../assets/icons/linkedin.svg" alt="LinkedIn">
+        <a href="https://linkedin.com/in/arsentii-poltavchenko-794bb1221" target="_blank">LinkedIn Arsentii Poltavchenko</a>
+      </div>
+      <div class="contact-item">
+        <img src="../assets/icons/github.svg" alt="GitHub">
+        <a href="https://github.com/ArtiyPoltavchenko" target="_blank">GitHub Arsentii Poltavchenko</a>
+      </div>
+      <div class="contact-item">
+        <img src="../assets/icons/mail.svg" alt="Email">
+        <a href="arsentii.poltavchenko@powercoders.org">arsentii.poltavchenko@powercoders.org</a>
+      </div>
+      <div class="contact-item">
+        <img src="../assets/icons/phone.svg" alt="Phone">
+        <span>+41 79 659 74 95</span>
+      </div>
+      <div class="contact-item">
+        <img src="../assets/icons/map-pin.svg" alt="Location">
+        <span>Zurich, Switzerland</span>
+      </div>
+    </div>
+  </div>
+</footer>
+<div id="modal-root" aria-hidden="true"></div>
 </body>
 </html>

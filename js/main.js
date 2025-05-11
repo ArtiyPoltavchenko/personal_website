@@ -1,4 +1,5 @@
 import { parseSection } from './parser.js';
+import { openProject } from './modal.js';
 
 const content = document.querySelector('.main-grid');
 
@@ -13,7 +14,10 @@ const content = document.querySelector('.main-grid');
     const sectionsData = pageData.sections.filter(section => section[type]);
     sectionsData.forEach(sectionData => {
       const sectionElement = parseSection(sectionData);
-      if (sectionElement) content.appendChild(sectionElement);
+      if (sectionElement) {
+        content.appendChild(sectionElement);
+      } 
+        
     });
   });
 
@@ -78,4 +82,16 @@ document.addEventListener('mousemove', (e) => {
     const offset = 10 + index * 5;
     icon.style.transform = `translate(${moveX * offset}px, ${moveY * offset}px)`;
   });
+});
+
+content.addEventListener('click', e => {
+  const card = e.target.closest('.card[data-slug]');
+  if (!card) return;
+
+  const slug = card.dataset.slug;
+  const path = card.dataset.json;
+
+  if (slug && path) {
+    openProject(slug, path);
+  }
 });

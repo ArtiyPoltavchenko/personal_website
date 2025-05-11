@@ -1,35 +1,65 @@
 {
     "render_order": [
     "introduction",
-    "experiences",
-    "skills"
+    "projects",
+    "skills",
+    "experiences"
        ],
   
     "sections": [
       {
         "introduction": {
-          "title": "About me",
-          "text": "I am a backend developer passionate about clean code, learning new technologies and creating awesome things."
+          "title": "Hello I'm **Arsentii Poltavchenko**,\\n**Software** Developer.",
+          "text": "After a career change from startup Project Manager, I’m now focused on **Software Development**.\\nI enjoy **clean code**, **teamwork**, and building practical tools with long-term value.\\nPassionate about **learning**, **electronics**, and turning ideas into working systems."
         }
       },
       {
+      "projects": [
+        {
+          "slug": "forge-master",
+          "title": "ForgeMaster",
+          "description": "Powerful campaign planner for DMs.",
+          "thumb": "./assets/img/forge-thumb.jpg",
+          "json": "./data/projects/forge-master.json"
+        }
+      ]
+    },
+      {
         "skills": [
-          { "icon": "../assets/img/js.png", "name": "JavaScript" },
-          { "icon": "../assets/img/git.png", "name": "Git" },
-          { "icon": "../assets/img/html.png", "name": "HTML" }
+          { "icon": "../assets/img/html.png", "name": "HTML (Intermediate)" },
+          { "icon": "../assets/img/css.png", "name": "CSS (Intermediate)" },
+          { "icon": "../assets/img/js.png", "name": "JavaScript (Beginner)" },
+          { "icon": "../assets/img/java.png", "name": "Java (Beginner)" },
+          { "icon": "../assets/img/go.png", "name": "Golang (Beginner)" },
+          { "icon": "../assets/img/apex.png", "name": "Apex (Beginner)" }
         ]
       },
       {
         "experiences": [
           {
-            "title": "Backend Developer at Tech Corp",
-            "date": "2022 - 2025",
-            "description": "Developed backend services and led junior developers."
+            "title": "Powercoders Bootcamp, Bern",
+            "date": "March 2025 – July 2025",
+            "description": "An intensive full-time training focused on practical **web development**. Studied core technologies like **HTML**, **CSS**, **JavaScript**, **Git**, and team collaboration workflows. Worked in teams, presented results, and gained confidence in real-world coding.\\n\\nGained all the necessary foundations to **keep learning and growing**. I feel confident and ready to contribute in a real team."
           },
           {
-            "title": "Intern at CodeLab",
-            "date": "2020 - 2022",
-            "description": "Assisted in frontend and agile processes."
+            "title": "Project Manager at Eterinte (Remote)",
+            "date": "May 2023 – August 2024",
+            "description": "Led a remote team in a small startup. Managed the development roadmap and prioritized features with stakeholders. Worked closely with the **frontend and backend teams**, coordinated **daily standups**, and used **Jira** and **Notion** for tracking. Also contributed to QA by writing bug reports. Contributed UI/UX with Designer and helped define component behavior."
+          },
+          {
+            "title": "German A2 Course – AOZ Zurich",
+            "date": "2024 – 2025",
+            "description": "Completed **A2-level German course** focused on communication, listening, reading and grammar. \\nAble to work and interact in German-speaking environments."
+          },
+          {
+            "title": "Salesforce Developer at PolytechSoftware",
+            "date": "August 2021 – March 2022",
+            "description": "Junior developer on the Salesforce platform. Contributed to both front-end and back-end development.\\n\\nGained hands-on experience in **Apex logic**, **Lightning Components**, **API integration**, and **data modeling**. Learned about **security validation**, working under the supervision of senior devs."
+          },
+          {
+            "title": "MSc in Automation – ONPU, Odessa",
+            "date": "2016 – 2022",
+            "description": "Master’s degree focused on **automated systems**, logic control, and embedded design. Graduation thesis included prototyping a **microcontroller-based control system**. Studied **PLC programming**, **electrical engineering**, and **robotics basics**.\\nStudied **automated control systems**, including both hardware and software aspects.\\nGained understanding of **information security**, **telemetry systems**, and **algorithm development**."
           }
         ]
       }

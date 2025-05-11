@@ -1,6 +1,6 @@
-/**
- * Utility: apply odd/even class to element
- */
+import { mdToHtml } from "./utils/miniMarkdown.js";
+
+
 function applyOddEvenClass(element, index) {
   element.classList.add(index % 2 === 0 ? 'even' : 'odd');
 }
@@ -30,11 +30,23 @@ function renderIntro(data) {
 
   const h2 = document.createElement('h2');
   const p = document.createElement('p');
+  const textWrap = document.createElement('div');
 
-  h2.innerText = data.title;
-  p.innerText = data.text;
+  h2.innerHTML = mdToHtml(data.title);
+  p.innerHTML = mdToHtml(data.text);
 
-  section.append(h2, p);
+  textWrap.append(h2,p);
+  const btnWrap = document.createElement('div');
+  btnWrap.className = 'about__cv-button';
+
+  const btn = document.createElement('a');
+  btn.href = '../data/pdf/CV_ArsentiiPOLTAVCHENKO.pdf';
+  btn.download = '';
+  btn.textContent = 'Download CV';
+  btnWrap.appendChild(btn);
+
+  section.append(textWrap, btnWrap);
+
   return section;
 }
 
@@ -80,9 +92,9 @@ function renderExperience(experiences) {
     const date = document.createElement('span');
     const desc = document.createElement('p');
 
-    title.innerText = exp.title;
-    date.innerText = exp.date;
-    desc.innerText = exp.description;
+    title.innerHTML = mdToHtml(exp.title);
+    date.innerHTML = mdToHtml(exp.date);
+    desc.innerHTML = mdToHtml(exp.description);
 
     top.append(title, date);
     block.append(top, desc);
@@ -94,6 +106,7 @@ function renderExperience(experiences) {
 
 /**
  * Render portfolio block
+ * DEPRECATED
  */
 function renderPortfolio(projects) {
   const { section, container } = createSectionContainer("My Portfolio", "portfolio");
@@ -120,12 +133,49 @@ function renderPortfolio(projects) {
 }
 
 /**
+ * Render projects block
+ * UPDATED
+ */
+function renderProjects(projects) {
+  const { section, container } = createSectionContainer("My Projects", "projects");
+  container.classList.add('projects__grid');
+
+  projects.forEach((proj, index) => {
+    const card = document.createElement('div');
+    applyOddEvenClass(card, index);
+    card.classList.add('card');
+
+    card.dataset.slug = proj.slug;
+    card.dataset.json = proj.json;
+    card.style.backgroundImage = `url(${proj.thumb})`;
+
+    const overlay = document.createElement('div');
+    overlay.classList.add('card__overlay');
+
+    const title = document.createElement('h3');
+    title.textContent = proj.title;
+
+    const desc = document.createElement('p');
+    desc.textContent = proj.description;
+
+    overlay.append(title, desc);
+    card.appendChild(overlay);
+    container.appendChild(card);
+  });
+
+  return section;
+}
+
+
+
+/**
  * Parse section based on its type
  */
 export function parseSection(data) {
   if (data.introduction) return renderIntro(data.introduction);
+  if (data.projects) return renderProjects(data.projects);
   if (data.skills) return renderSkills(data.skills);
   if (data.experiences) return renderExperience(data.experiences);
-  if (data.portfolio) return renderPortfolio(data.portfolio);
+  //if (data.portfolio) return renderPortfolio(data.portfolio);
   return null;
 }
