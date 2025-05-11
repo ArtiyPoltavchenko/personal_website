@@ -18,7 +18,7 @@
           {
             "slug": "personal-website",
             "title": "Personal Website",
-            "description": "Portfolio-driven single-page website.",
+            "description": "Portfolio-driven single-page website with content loading utils.",
             "thumb": "./assets/img/projects_imgs/site-thumb.png",
             "json": "./data/projects/personal-website.json"
           },
