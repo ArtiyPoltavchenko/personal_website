@@ -56,16 +56,6 @@ project-root/
 
 ---
 
-## 📸 Screenshots
-
-| Section | Preview |
-|--------|---------|
-| Hero / Intro | ![intro](./assets/img/website-1.jpg) |
-| Projects Grid | ![projects](./assets/img/website-2.jpg) |
-| Modal Viewer | ![modal](./assets/img/website-3.jpg) |
-
----
-
 ## 👨‍💻 How it works
 
 1. `main.js` loads JSON (`index.json`)
@@ -86,12 +76,6 @@ project-root/
   "text": "I'm a **developer** focused on clean logic and creative systems.\n__Self-taught__, pragmatic and growing every day."
 }
 ```
-
----
-
-## 🔓 License
-
-MIT — feel free to reuse structure or code for your own site. Attribution appreciated 🙏
 
 ---
 
