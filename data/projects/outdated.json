@@ -1,0 +1,8 @@
+
+          {
+            "slug": "orchestra",
+            "title": "[ORCHE]STRA",
+            "description": "Crypto trading strategy builder with real-time execution and dashboard.",
+            "thumb": "./assets/img/projects_imgs/orchestra-thumb.png",
+            "json": "./data/projects/orchestra.json"
+          }
